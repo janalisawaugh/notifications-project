@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:love_island_notifications/presentation/card_template.dart';
 
-// if i use bloc, create events for when all vs unread vs read is pressed. need for read and unread
-// to have the condition that they chec the state of the read variable and for read
-// check if it's true and build those, and for unread if it's false. also need to deal with the empty state
-// if the notification list is empty
-
 class FiltersBar extends StatefulWidget {
   State<FiltersBar> createState() => _FiltersBar();
 }

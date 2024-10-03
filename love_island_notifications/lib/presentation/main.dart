@@ -15,8 +15,6 @@ final List<Map<String, dynamic>> cardInfo = [
   {
     'dp': Images.aaron,
     'name': 'Aaron',
-    // 'description':
-    //     'Liar. Cheater. Manipulator. Gaslighter. Villain. Alleged love: Kaylor. Casa love: Daniela. Real love: Rob.',
     'description':
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ',
     'timeStamp': '12:00AM',
@@ -29,8 +27,6 @@ final List<Map<String, dynamic>> cardInfo = [
   {
     'dp': Images.rob,
     'name': 'Rob',
-    // 'description':
-    //     'Snake catcher. Liar. Whore. PPG opp. Drama king. The overalls ugh. First love: Leah. Lasting relationships: 0. True love: Aaron.',
     'description':
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ',
     'timeStamp': '12:01AM',
@@ -43,8 +39,6 @@ final List<Map<String, dynamic>> cardInfo = [
   {
     'dp': Images.kendall,
     'name': 'Kendall',
-    // 'description':
-    //     'FAKE. PPG opp. Disappointing. (Leak was sad). Black card: revoked (did he ever get one?). Nicole: not his girl.',
     'description':
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ',
     'timeStamp': '12:02AM',
@@ -118,9 +112,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void deleteNotif(int index) {
+  void deleteNotif(String id) {
     setState(() {
-      cardInfo[index]['deleted'] = true;
+      final notification = cardInfo.firstWhere((notif) => notif['id'] == id);
+      notification['deleted'] = true;
     });
   }
 
@@ -246,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   state.readStates[cardInfo[index]['id']] ??
                                       false;
                               print(
-                                  "Building card ${cardInfo[index]['id']} read: $isRead");
+                                  "Building card ${notification['id']} read: ${state.readStates[notification['id']]}, deleted: ${notification['deleted']}");
                               return NotifCard1(
                                 dp: notification['dp'],
                                 name: notification['name'],
@@ -258,7 +253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 deleted: notification['deleted'] ?? false,
                                 category: notification['category'],
                                 id: notification['id'],
-                                onDelete: () => deleteNotif(index),
+                                onDelete: () => deleteNotif(notification['id']),
                               );
                             },
                             childCount:

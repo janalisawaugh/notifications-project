@@ -138,14 +138,6 @@ class _NotifCard1 extends State<NotifCard1> {
           subtitle: Text(widget.description),
           onTap: () {
             print("Card tapped: ${widget.id}");
-            // try {
-            //   final notificationBloc =
-            //       BlocProvider.of<NotificationBloc>(context, listen: false);
-            //   notificationBloc.add(MarkAsRead(widget.id));
-            //   print("MarkAsRead event added for: ${widget.id}");
-            // } catch (e) {
-            //   print("Error accessing NotificationBloc: $e");
-            // }
             final notificationBloc =
                 BlocProvider.of<NotificationBloc>(context, listen: false);
             notificationBloc.add(MarkAsRead(widget.id));
