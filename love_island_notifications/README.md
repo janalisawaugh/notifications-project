@@ -1,16 +1,4 @@
 # love_island_notifications
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This flutter project is a notification center. Using Bloc state management, I added functionality to mark a card as read after it has been tapped and filter between read and unread notifications. There is also functionality to delete notifications by sliding the notification to the left.
+To run the project, ensure flutter is installed, dependencies have been retrieved with flutter pub get, and a device (Web browser, desktop or emulator) has been selected. It is best to select the run without debugging option.
